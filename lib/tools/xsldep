@@ -1,0 +1,58 @@
+#!/bin/sh
+# $Id$
+
+if [ $# -lt 1 ]; then
+	echo "usage: $0 file"
+	exit 1
+fi
+
+if [ "$XSLTP" = "" -o "$M4" = "" -o "$DEP_XSL" = "" ]; then
+	echo "The environmental variables 'XSLTP', 'M4', and 'DEP_XSL' must be provided."
+	exit 1
+fi
+
+unique()
+{
+	# XXX: is -e dangerous?
+	lines=$(echo -e "$2\n$3" | perl -pe 's/ /\n/g' | sort)
+	ret=$(echo "$lines" | uniq $1)
+}
+
+proc=
+remain=$(echo $* | perl -pe 's/ /\n/g')
+
+while [ "$remain" ]; do
+	for i in $remain; do
+		echo  "$M4 $MFLAGS $DEP_XSL | $XSLTP $XFLAGS - $i" 1>&2
+		deps=$($M4 $MFLAGS $DEP_XSL | $XSLTP $XFLAGS - $i)
+		if [ $? -ne 0 ]; then
+			exit 1
+		fi
+		proc="$i $proc"
+
+		newdeps=
+		for dep in $deps; do
+			if ! [ -f $dep ]; then
+				dep=$(dirname $i)/$dep
+				if ! [ -f $dep ]; then
+					echo "Can't find $dep!"
+					exit 1
+				fi
+			fi
+			newdeps="$dep $newdeps"
+		done
+		deps=$newdeps
+
+		# We just want single occurances
+		unique "" "$remain" "$deps"
+		remain=$ret
+
+		# We want truly unique lines
+		unique -u "$i" "$remain"
+		remain=$ret
+
+		break
+	done
+done
+
+echo "$proc"
