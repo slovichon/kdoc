@@ -416,8 +416,10 @@
 			</def>
 		</item>
 		<item>
-			<term></term>
+			<term>softc</term>
 			<def>
+				A softc is a device-specific data structure that maintains the device's
+				state and other internal data structures.
 			</def>
 		</item>
 		<item>
