@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<doc>
+	<hd>Conventions</hd>
+	<p>This document describes styling conventions that will appear elsewhere
+	   throughout this documentation.</p>
+	<hd size="2">Code</hd>
+	<p>Program code fragments have the following conventions.</p>
+	<code>
+struct sockaddr_in {
+	u_int8_t    sin_len;
+	sa_family_t sin_family;
+	in_port_t   sin_port;
+	struct      in_addr sin_addr;
+	int8_t      sin_zero[8];
+};
+	</code>
+	<hd size="2">Terminology</hd>
+	<p>Introduced terminology has the following conventions.</p>
+	<p>The list of processes running, blocked, or in other states in the kernel
+	   is the <term>process control block</term>.</p>
+</doc>
