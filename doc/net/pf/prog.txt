@@ -1,0 +1,3 @@
+when creating tables, the table name must have slack space filled:
+
+	memcpy(pfr.pfr_name, 0, sizeof(pfr.pfr_name));
