@@ -91,9 +91,39 @@
 
 	<!-- Terminology -->
 	<xsl:template match="term">
-		<xsl:element name="em">
-			<xsl:apply-templates />
-		</xsl:element>
+		<xsl:choose>
+			<!-- Introducing terminology; no need for link. -->
+			<xsl:when test="@intro = 'yes'">
+				<xsl:element name="em">
+					<xsl:apply-templates />
+				</xsl:element>
+			</xsl:when>
+
+			<!-- Link to term for definition. -->
+			<xsl:otherwise>
+				<xsl:variable name="anchor">
+					<!-- Optional 'real' attribute to specify actual term. -->
+					<xsl:choose>
+						<xsl:when test="@real">
+							<xsl:value-of select="@real" />
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:value-of select="node()" />
+						</xsl:otherwise>
+					</xsl:choose>
+				</xsl:variable>
+				<xsl:element name="a">
+					<xsl:attribute name="href">
+						<xsl:value-of select="$URLROOT" />
+						<xsl:text>/doc/intro/terms.html#</xsl:text>
+						<xsl:value-of select="convert($anchor, ' ', '.')" />
+					</xsl:attribute>
+					<xsl:element name="em">
+						<xsl:apply-templates />
+					</xsl:element>
+				</xsl:element>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 
 	<!-- Note -->
