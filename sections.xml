@@ -32,9 +32,11 @@
 					<subsection><name>File Descriptor Filesystem (fdesc)</name></subsection>
 					<subsection><name>Log-structured Filesystem (lfs)</name></subsection>
 					<subsection><name>Loopback Filesystem (nullfs)</name></subsection>
+					<subsection><name>UMAP Filesystem (umapfs)</name></subsection>
 					<subsection><name>Union Filesystem (union)</name></subsection>
-					<subsection><name></name></subsection>
-					<!-- portal xfs deadfs fifofs genfs specfs -->
+					<subsection><name>(portal)</name></subsection>
+					<subsection><name>(xfs)</name></subsection>
+					<!-- deadfs fifofs genfs specfs -->
 				</subsections>
 			</subsection>
 			<subsection><name>Abstract Interface</name></subsection>
@@ -207,7 +209,7 @@
 	<section>
 		<name>Compatilibility And Emulation</name>
 		<subsections>
-			<subsection><name>Compatibility Overview</name></subsection>
+			<subsection><name>Overview</name></subsection>
 			<subsection><name>FreeBSD</name></subsection>
 			<subsection><name>NetBSD</name></subsection>
 			<subsection><name>OpenBSD 2.3</name></subsection>
@@ -219,13 +221,20 @@
 			<subsection><name>HP-UX</name></subsection>
 			<subsection><name>SVR4</name></subsection>
 			<subsection><name>Ultrix</name></subsection>
-			<subsection><name>a.out</name></subsection>
-			<subsection><name>Intel Compatibility Standard (ibcs2)</name></subsection>
-			<subsection><name>Emulation Overview</name></subsection>
-			<subsection><name>DEC UNIX (osf1)</name></subsection>
 			<subsection><name>SunOS</name></subsection>
+			<subsection><name>DEC UNIX (osf1)</name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Emulation</name>
+		<subsections>
+			<subsection><name>Overview</name></subsection>
+			<subsection><name>Intel Compatibility Standard (ibcs2)</name></subsection>
+			<subsection><name>SVR4</name></subsection>
 			<subsection><name>BSD/OS</name></subsection>
 			<subsection><name>Linux</name></subsection>
+			<subsection><name>FreeBSD</name></subsection>
+			<subsection><name>a.out</name></subsection>
 		</subsections>
 	</section>
 	<section>
