@@ -2,7 +2,7 @@
 
 <sections>
 	<section>
-		<name>Index</name>
+		<name>Introduction</name>
 		<subsections>
 			<subsection><name>Terminology</name></subsection>
 			<subsection><name>Conventions</name></subsection>
@@ -19,10 +19,10 @@
 					<subsection><name>Second Extended Filesystem (ext2)</name></subsection>
 					<subsection><name>Third Extended Filesystem (ext3)</name></subsection>
 					<subsection><name>AmigaDOS Filesystem (ados)</name></subsection>
-					<subsection><name>Fast Filesystem (ffs)</name></subsection>
+					<subsection><name>Berkeley Fast Filesystem (ffs/ufs)</name></subsection>
 					<subsection><name>Second UNIX Filesystem (ufs2)</name></subsection>
 					<subsection><name>Memory Filesystem (mfs)</name></subsection>
-					<subsection><name>ISO6990 Filesystem (cd9660)</name></subsection>
+					<subsection><name>ISO9660 Filesystem (cd9660)</name></subsection>
 					<subsection><name>Process Filesystem (procfs)</name></subsection>
 					<subsection><name>Network Filesystem (nfs)</name></subsection>
 					<subsection><name>Andrew Filesystem (afs)</name></subsection>
@@ -31,10 +31,12 @@
 					<subsection><name>Kernel Filesystem (kernfs)</name></subsection>
 					<subsection><name>File Descriptor Filesystem (fdesc)</name></subsection>
 					<subsection><name>Log-structured Filesystem (lfs)</name></subsection>
-					<subsection><name>Loopback Filesystem (nullfs)</name></subsection>
-					<subsection><name>UMAP Filesystem (umapfs)</name></subsection>
+					<subsection><name>Loopback Filesystem (lofs)</name></subsection>
+					<subsection><name>Minimal Filesystem (nullfs)</name></subsection>
+					<subsection><name>User/Group ID Remapping Filesystem (umapfs)</name></subsection>
 					<subsection><name>Union Filesystem (union)</name></subsection>
-					<subsection><name>(portal)</name></subsection>
+					<subsection><name>Portal Filesystem (portal)</name></subsection>
+					<subsection><name>Netware Network Filesytem (ncpfs)</name></subsection>
 					<subsection><name>(xfs)</name></subsection>
 					<!-- deadfs fifofs genfs specfs -->
 				</subsections>
@@ -183,61 +185,6 @@
 		</subsections>
 	</section>
 	<section>
-		<name>Building And Running</name>
-		<subsections>
-			<subsection><name>Options And Configuration</name></subsection>
-			<subsection><name>Compilation Overview</name></subsection>
-			<subsection><name>Debugging</name></subsection>
-			<subsection><name>GENERIC</name></subsection>
-			<subsection><name>Kernel Tracing</name></subsection>
-			<subsection><name>Upgrading</name></subsection>
-			<subsection><name>Troubleshooting</name></subsection>
-			<subsection><name>Performance, Analyzing, Tuning</name></subsection>
-		</subsections>
-	</section>
-	<section>
-		<name>Other Services</name>
-		<subsections>
-			<subsection><name>Kernel Queues</name></subsection>
-			<subsection><name>Accounting And Statistics</name></subsection>
-			<subsection><name>Cryptography</name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-		</subsections>
-	</section>
-	<section>
-		<name>Compatilibility And Emulation</name>
-		<subsections>
-			<subsection><name>Overview</name></subsection>
-			<subsection><name>FreeBSD</name></subsection>
-			<subsection><name>NetBSD</name></subsection>
-			<subsection><name>OpenBSD 2.3</name></subsection>
-			<subsection><name>OpenBSD 2.5</name></subsection>
-			<subsection><name>4.1BSD</name></subsection>
-			<subsection><name>4.2BSD</name></subsection>
-			<subsection><name>4.3BSD</name></subsection>
-			<subsection><name>4.4BSD</name></subsection>
-			<subsection><name>HP-UX</name></subsection>
-			<subsection><name>SVR4</name></subsection>
-			<subsection><name>Ultrix</name></subsection>
-			<subsection><name>SunOS</name></subsection>
-			<subsection><name>DEC UNIX (osf1)</name></subsection>
-		</subsections>
-	</section>
-	<section>
-		<name>Emulation</name>
-		<subsections>
-			<subsection><name>Overview</name></subsection>
-			<subsection><name>Intel Compatibility Standard (ibcs2)</name></subsection>
-			<subsection><name>SVR4</name></subsection>
-			<subsection><name>BSD/OS</name></subsection>
-			<subsection><name>Linux</name></subsection>
-			<subsection><name>FreeBSD</name></subsection>
-			<subsection><name>a.out</name></subsection>
-		</subsections>
-	</section>
-	<section>
 		<name>I/O</name>
 		<subsections>
 			<subsection><name>Unified Buffer Cache (UBC)</name></subsection>
@@ -261,15 +208,6 @@
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
-		</subsections>
-	</section>
-	<section>
-		<name>Kernel Modules</name>
-		<subsections>
-			<subsection><name>Overview</name></subsection>
-			<subsection><name>Elaboration</name></subsection>
-			<subsection><name>API Reference</name></subsection>
-			<subsection><name>Examples</name></subsection>
 		</subsections>
 	</section>
 	<section>
@@ -333,6 +271,80 @@
 			<subsection><name>Berkeley Packet Filter</name></subsection>
 			<subsection><name>Virtual LANs</name></subsection>
 			<subsection><name>Bluetooth</name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Compatilibility</name>
+		<subsections>
+			<subsection><name>Overview</name></subsection>
+			<subsection><name>FreeBSD</name></subsection>
+			<subsection><name>NetBSD</name></subsection>
+			<subsection><name>OpenBSD 2.3</name></subsection>
+			<subsection><name>OpenBSD 2.5</name></subsection>
+			<subsection><name>4.1BSD</name></subsection>
+			<subsection><name>4.2BSD</name></subsection>
+			<subsection><name>4.3BSD</name></subsection>
+			<subsection><name>4.4BSD</name></subsection>
+			<subsection><name>HP-UX</name></subsection>
+			<subsection><name>SVR4</name></subsection>
+			<subsection><name>Ultrix</name></subsection>
+			<subsection><name>SunOS</name></subsection>
+			<subsection><name>DEC UNIX (osf1)</name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Emulation</name>
+		<subsections>
+			<subsection><name>Overview</name></subsection>
+			<subsection><name>Intel Compatibility Standard (ibcs2)</name></subsection>
+			<subsection><name>SVR4</name></subsection>
+			<subsection><name>BSD/OS</name></subsection>
+			<subsection><name>Linux</name></subsection>
+			<subsection><name>FreeBSD</name></subsection>
+			<subsection><name>a.out</name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Kernel Modules</name>
+		<subsections>
+			<subsection><name>Overview</name></subsection>
+			<subsection><name>Elaboration</name></subsection>
+			<subsection><name>API Reference</name></subsection>
+			<subsection><name>Examples</name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Other Services</name>
+		<subsections>
+			<subsection><name>Kernel Queues</name></subsection>
+			<subsection><name>Accounting And Statistics</name></subsection>
+			<subsection><name>Cryptography</name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Building And Running</name>
+		<subsections>
+			<subsection><name>Options And Configuration</name></subsection>
+			<subsection><name>Compilation Overview</name></subsection>
+			<subsection><name>Debugging</name></subsection>
+			<subsection><name>GENERIC</name></subsection>
+			<subsection><name>Kernel Tracing</name></subsection>
+			<subsection><name>Upgrading</name></subsection>
+			<subsection><name>Troubleshooting</name></subsection>
+			<subsection><name>Performance, Analyzing, Tuning</name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Appendices</name>
+		<subsections>
+			<subsection><name>API Index</name></subsection>
+			<subsection><name>Index</name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
 		</subsections>
 	</section>
 </section>
