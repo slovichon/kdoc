@@ -11,15 +11,6 @@
 		<subsections>
 	</section>
 	<section>
-		<name>Kernel Modules</name>
-		<subsections>
-			<subsection><name>Overview</name></subsection>
-			<subsection><name>Elaboration</name></subsection>
-			<subsection><name>API Reference</name></subsection>
-			<subsection><name>Examples</name></subsection>
-		</subsections>
-	</section>
-	<section>
 		<name>Filesystems</name>
 		<subsections>
 			<subsection>
@@ -57,9 +48,18 @@
 		<name>Process Management</name>
 		<subsections>
 			<subsection><name>Signals</name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
+			<subsection><name>Process Creation</name></subsection>
+			<subsection><name>Process Termination</name></subsection>
+			<subsection>
+				<name>IPC</name>
+				<subsections>
+					<subsection><name>Pipes</name></subsection>
+					<subsection><name></name></subsection>
+					<subsection><name>Semaphores</name></subsection>
+					<subsection><name>Shared Memory</name></subsection>
+				</subsections>
+			</subsection>
+			<subsection><name>Scheduling</name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
@@ -79,12 +79,21 @@
 					<subsection><name>FreeBSD VM Differences</name></subsection>
 					<subsection><name>NetBSD UVM Differences</name></subsection>
 					<subsection><name>SunOS VM Differences</name></subsection>
+
+					<!-- These were two main features that were added. -->
 					<subsection><name>Page Loanout</name></subsection>
 					<subsection><name>Map Entry Passing</name></subsection>
+					<subsection><name></name></subsection>
+					<subsection><name></name></subsection>
 				</subsections>
 			</subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
+			<subsection>
+				<name>KVM</name>
+				<subsections>
+					<subsection><name></name></subsection>
+				</subsections>
+			</subsection>
+			<subsection><name>Swapping</name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
@@ -167,8 +176,8 @@
 					</subsection>
 				</subsections>
 			</subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
+			<subsection><name>Power Management</name></subsection>
+			<subsection><name>System Clock</name></subsection>
 		</subsections>
 	</section>
 	<section>
@@ -181,7 +190,7 @@
 			<subsection><name>Kernel Tracing</name></subsection>
 			<subsection><name>Upgrading</name></subsection>
 			<subsection><name>Troubleshooting</name></subsection>
-			<subsection><name></name></subsection>
+			<subsection><name>Performance, Analyzing, Tuning</name></subsection>
 		</subsections>
 	</section>
 	<section>
@@ -193,15 +202,6 @@
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
-		</subsections>
-	</section>
-	<section>
-		<name>IPC</name>
-		<subsections>
-			<subsection><name>Pipes</name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name>Semaphores</name></subsection>
-			<subsection><name>Shared Memory</name></subsection>
 		</subsections>
 	</section>
 	<section>
@@ -255,11 +255,25 @@
 		</subsections>
 	</section>
 	<section>
+		<name>Kernel Modules</name>
+		<subsections>
+			<subsection><name>Overview</name></subsection>
+			<subsection><name>Elaboration</name></subsection>
+			<subsection><name>API Reference</name></subsection>
+			<subsection><name>Examples</name></subsection>
+		</subsections>
+	</section>
+	<section>
 		<name>Networking</name>
 		<subsections>
 			<subsection>
 				<name>Internet Protocol</name>
-				<subsection><name>IPv4</name></subsection>
+				<subsection>
+					<name>IPv4</name>
+					<subsections>
+						<subsection><name>Routing</name></subsection>
+					</subsections>
+				</subsection>
 				<subsection><name>IPv6</name></subsection>
 				<subsection><name>IPsec</name></subsection>
 				<subsection><name>Multicasting</name></subsection>
@@ -290,30 +304,26 @@
 				</subsections>
 			</subsection>
 			<subsection><name>Unix Domain Sockets</name></subsection>
-			<subsection><name>PPP</name></subsection>
-			<subsection><name>NFS</name></subsection>
-			<subsection><name>OSI</name></subsection>
+			<subsection><name>Point-to-point Protocol</name></subsection>
+			<subsection><name>Unix Domain Sockets</name></subsection>
+			<subsection><name>Network Filesystem</name></subsection>
+			<subsection><name>ATM</name></subsection>
+
+			<!-- Xerox Network Software -->
+			<subsection><name>NS</name></subsection>
+
+			<!-- /sys/netccitt? -->
+			<subsection><name>Open Systems Interconnect</name></subsection>
+
+			<!-- X.25 is the data-link layer. -->
 			<subsection><name>X.25</name></subsection>
 			<subsection><name>Tunneling</name></subsection>
 			<subsection><name>Encapsulation</name></subsection>
 			<subsection><name>Bridging</name></subsection>
-			<subsection><name>SLIP</name></subsection>
-			<subsection><name>BPF</name></subsection>
-			<subsection><name>VLANs</name></subsection>
+			<subsection><name>Serial Line IP</name></subsection>
+			<subsection><name>Berkeley Packet Filter</name></subsection>
+			<subsection><name>Virtual LANs</name></subsection>
 			<subsection><name>Bluetooth</name></subsection>
-		</subsections>
-	</section>
-	<section>
-		<name>Performance, Anaylzing, And Tuning</name>
-		<subsections>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
 		</subsections>
 	</section>
 </section>
