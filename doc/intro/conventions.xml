@@ -1,11 +1,13 @@
 <?xml version="1.0" ?>
+<!-- $Id$ -->
 
-<doc>
-	<hd>Conventions</hd>
+<doc
+	xmlns:code="http://projects.closeedge.net/kobsd/xsl/code">
+	<h>Conventions</h>
 	<p>This document describes styling conventions that will appear elsewhere
 	   throughout this documentation.</p>
-	<hd size="2">Code</hd>
-	<p>Program code fragments have the following conventions.</p>
+	<h size="2">Code</h>
+	<p>Program code fragments have the following conventions:</p>
 	<code>
 struct sockaddr_in {
 	u_int8_t    sin_len;
@@ -15,8 +17,12 @@ struct sockaddr_in {
 	int8_t      sin_zero[8];
 };
 	</code>
-	<hd size="2">Terminology</hd>
-	<p>Introduced terminology has the following conventions.</p>
-	<p>The list of processes running, blocked, or in other states in the kernel
-	   is the <term>process control block</term>.</p>
+	<p>Segments of code introduced in description sections have the following
+	   conventions:</p>
+	<note>The <code:dt>sin_family</code:dt> member contains the socket
+	      address family.</note>
+	<h size="2">Terminology</h>
+	<p>Introduced terminology has the following conventions:</p>
+	<note>The list of processes running, blocked, or in other states in the kernel
+	      is called the <term>process table</term>.</note>
 </doc>
