@@ -4,23 +4,78 @@
 	<section>
 		<name>Introduction</name>
 		<subsections>
-			<subsection><name>Terminology</name></subsection>
 			<subsection><name>Conventions</name></subsection>
 			<subsection><name>Architecture Overview</name></subsection>
-			<subsection><name>Index</name></subsection>
 		<subsections>
+	</section>
+	<section>
+		<name>Process Management</name>
+		<subsections>
+			<subsection><name>Signals</name></subsection>
+			<subsection><name>Context Swapping</name></subsection>
+			<subsection><name>Forking Models</name></subsection>
+			<subsection><name>Process Creation</name></subsection>
+			<subsection><name>Process Termination</name></subsection>
+			<subsection>
+				<name>IPC</name>
+				<subsections>
+					<subsection><name>Pipes</name></subsection>
+					<subsection><name></name></subsection>
+					<subsection><name>Semaphores</name></subsection>
+					<subsection><name>Shared Memory</name></subsection>
+				</subsections>
+			</subsection>
+			<subsection><name>Scheduling</name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>IPC</name>
+		<subsections>
+			<subsection><name>Pipes</name></subsection>
+			<subsection><name>Semaphores</name></subsection>
+			<subsection><name>Shared Memory</name></subsection>
+			<subsection><name></name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Memory Management</name>
+		<subsections>
+			<subsection><name>Non-executable Stack</name></subsection>
+			<subsection><name>Non-executable Heap</name></subsection>
+			<subsection>
+				<name>UVM</name>
+				<subsections>
+					<subsection><name>Mach VM Differences</name></subsection>
+					<subsection><name>4.4BSD VM Differences</name></subsection>
+					<subsection><name>FreeBSD VM Differences</name></subsection>
+					<subsection><name>NetBSD UVM Differences</name></subsection>
+					<subsection><name>SunOS VM Differences</name></subsection>
+					<subsection><name>Page Loanout</name></subsection>
+					<subsection><name>Map Entry Passing</name></subsection>
+				</subsections>
+			</subsection>
+			<subsection><name>The MMU Interface (pmap)</name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+		</subsections>
 	</section>
 	<section>
 		<name>Filesystems</name>
 		<subsections>
+			<subsection><name>Overview</name></subsection>
 			<subsection>
 				<name>Supported Filesystems</name>
 				<subsections>
-					<subsection><name>Second Extended Filesystem (ext2)</name></subsection>
-					<subsection><name>Third Extended Filesystem (ext3)</name></subsection>
-					<subsection><name>AmigaDOS Filesystem (ados)</name></subsection>
 					<subsection><name>Berkeley Fast Filesystem (ffs/ufs)</name></subsection>
-					<subsection><name>Second UNIX Filesystem (ufs2)</name></subsection>
+					<subsection><name>Second Extended Filesystem (ext2)</name></subsection>
+					<subsection><name>AmigaDOS Filesystem (ados)</name></subsection>
 					<subsection><name>Memory Filesystem (mfs)</name></subsection>
 					<subsection><name>ISO9660 Filesystem (cd9660)</name></subsection>
 					<subsection><name>Process Filesystem (procfs)</name></subsection>
@@ -35,13 +90,25 @@
 					<subsection><name>Minimal Filesystem (nullfs)</name></subsection>
 					<subsection><name>User/Group ID Remapping Filesystem (umapfs)</name></subsection>
 					<subsection><name>Union Filesystem (union)</name></subsection>
+					<subsection><name>External Filesystem (xfs)</name></subsection>
+					<!-- xfs - serverless network file service - userspace fs 
+					external file system (actually second incarnation, should be ext2) -->
 					<subsection><name>Portal Filesystem (portal)</name></subsection>
-					<subsection><name>Netware Network Filesytem (ncpfs)</name></subsection>
-					<subsection><name>(xfs)</name></subsection>
+					<subsection><name></name></subsection>
 					<!-- deadfs fifofs genfs specfs -->
 				</subsections>
 			</subsection>
-			<subsection><name>Abstract Interface</name></subsection>
+			<subsection>
+				<name>Other Filesystems</name>
+				<subsections>
+					<subsection><name>Second UNIX Filesystem (ufs2)</name></subsection>
+					<subsection><name>Third Extended Filesystem (ext3)</name></subsection>
+					<subsection><name>Log-structured Filesystem (lfs)</name></subsection>
+					<subsection><name>Netware Network Filesytem (ncpfs)</name></subsection>
+					<subsection><name></name></subsection>
+				</subsections>
+			</subsection>
+			<subsection><name>The Virutal Filesystem Interface (vfs)</name></subsection>
 			<subsection><name>Quotas</name></subsection>
 			<subsection><name>Swap</name></subsection>
 			<subsection><name></name></subsection>
@@ -49,21 +116,9 @@
 		</subsections>
 	</section>
 	<section>
-		<name>Process Management</name>
+		<name>I/O</name>
 		<subsections>
-			<subsection><name>Signals</name></subsection>
-			<subsection><name>Process Creation</name></subsection>
-			<subsection><name>Process Termination</name></subsection>
-			<subsection>
-				<name>IPC</name>
-				<subsections>
-					<subsection><name>Pipes</name></subsection>
-					<subsection><name></name></subsection>
-					<subsection><name>Semaphores</name></subsection>
-					<subsection><name>Shared Memory</name></subsection>
-				</subsections>
-			</subsection>
-			<subsection><name>Scheduling</name></subsection>
+			<subsection><name>Unified Buffer Cache (UBC)</name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
@@ -109,16 +164,19 @@
 			<subsection>
 				<name>Supported Architectures</name>
 				<subsections>
+					<subsection><name>alpha</name></subsection>
+					<subsection><name>amd64</name></subsection>
+					<subsection><name>arm</name></subsection>
 					<subsection><name>hp300</name></subsection>
+					<subsection><name>hppa</name></subsection>
 					<subsection><name>i386</name></subsection>
 					<subsection><name>mac68k</name></subsection>
+					<subsection><name>macppc</name></subsection>
 					<subsection><name>mvme68k</name></subsection>
+					<subsection><name>mvme88k</name></subsection>
+					<subsection><name>pegasos</name></subsection>
 					<subsection><name>sparc</name></subsection>
 					<subsection><name>sparc64</name></subsection>
-					<subsection><name>alpha</name></subsection>
-					<subsection><name>hppa</name></subsection>
-					<subsection><name>macppc</name></subsection>
-					<subsection><name>pegasos</name></subsection>
 					<subsection><name>vax</name></subsection>
 				</subsections>
 			</subsection>
@@ -126,10 +184,6 @@
 				<name>Other Architectures</name>
 				<subsections>
 					<!-- New porting efforts -->
-					<subsection><name>amd64</name></subsection>
-					<subsection><name>arm32</name></subsection>
-					<subsection><name>mvme88k</name></subsection>
-
 					<subsection><name>sgi</name></subsection>
 					<subsection><name>romp</name></subsection>
 					<subsection><name>hppa64</name></subsection>
@@ -141,6 +195,7 @@
 					<subsection><name>amiga</name></subsection>
 
 					<!-- From NetBSD -->
+					<!-- XXX: we might want to make this all one section. -->
 					<subsection><name>mac88k</name></subsection>
 					<subsection><name>mvmeppc</name></subsection>
 					<subsection><name>m68k</name></subsection>
@@ -180,29 +235,28 @@
 					</subsection>
 				</subsections>
 			</subsection>
+			<subsection><name>Radio Driver Layer</name></subsection>
+			<subsection><name>Audio Driver Layer</name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
+			<subsection><name></name></subsection>
 			<subsection><name>Power Management</name></subsection>
 			<subsection><name>System Clock</name></subsection>
 		</subsections>
 	</section>
 	<section>
-		<name>I/O</name>
-		<subsections>
-			<subsection><name>Unified Buffer Cache (UBC)</name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-		</subsections>
-	</section>
-	<section>
 		<name>Multiprocessing</name>
 		<subsections>
-			<subsection><name>Threading</name></subsection>
+			<subsection><name>User-level Threading</name></subsection>
+			<subsection><name>Kernel-aware Threading</name></subsection>
 			<subsection><name>Symmetric Multiprocessing</name></subsection>
-			<subsection><name></name></subsection>
+			<subsection><name>Asymmetric Multiprocessing</name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
@@ -317,10 +371,39 @@
 		<name>Other Services</name>
 		<subsections>
 			<subsection><name>Kernel Queues</name></subsection>
-			<subsection><name>Accounting And Statistics</name></subsection>
+			<subsection><name>Accounting and Statistics</name></subsection>
 			<subsection><name>Cryptography</name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
+			<subsection><name>Logging</name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Building and Running</name>
+		<subsections>
+			<subsection><name>Bootstrapping Process</name></subsection>
+			<subsection><name>Options and Configuration</name></subsection>
+			<subsection><name>Compilation Overview</name></subsection>
+			<subsection><name>Debugging</name></subsection>
+			<subsection><name>GENERIC</name></subsection>
+			<subsection><name>Kernel Tracing</name></subsection>
+			<subsection><name>Upgrading</name></subsection>
+			<subsection><name>Troubleshooting</name></subsection>
+			<subsection><name>Tuning</name></subsection>
+			<subsection><name>Analyzing</name></subsection>
+		</subsections>
+	</section>
+	<section>
+		<name>Appendices</name>
+		<subsections>
+			<subsection><name>Terminology/Glossary</name></subsection>
+			<subsection>
+				<name>History</name>
+				<subsections>
+					<subsection><name>BSD</name></subsection>
+					<subsection><name>Sockets</name></subsection>
+					<subsection><name>OpenBSD</name></subsection>
+					<subsection><name>PF</name></subsection>
+				</subsections>
+			</subsection>
 			<subsection><name></name></subsection>
 		</subsections>
 	</section>
