@@ -1,0 +1,23 @@
+/* $Id$ */
+/* Common stylesheet */
+
+pre {
+	margin:3px;
+	background-color:#EEEEEE;
+	font-family:Courier 10 Pitch;
+}
+
+code {
+	font-family:Courier 10 Pitch;
+	color:#336699;
+}
+
+h1, h2, h3, h4 {
+	color:#336699;
+}
+
+hr {
+	height:3px;
+	border:0px;
+	color:#336699;
+}
