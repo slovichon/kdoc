@@ -8,7 +8,7 @@
 
 	<xsl:import href="code.xsl" />
 	<xsl:output method="xml" />
-	<xsl:preserve-space elements="code" />
+	<xsl:strip-space elements="*" />
 
 	<xsl:template match="doc">
 		<xsl:element name="html">
@@ -26,7 +26,7 @@
 					<xsl:attribute name="type">text/css</xsl:attribute>
 					<xsl:attribute name="href">
 						<xsl:value-of select="$URLROOT" />
-						<xsl:text>/lib/common.css</xsl:text>
+						<xsl:text>/lib/css/common.css</xsl:text>
 					</xsl:attribute>
 					<xsl:attribute name="media">all</xsl:attribute>
 				</xsl:element>
@@ -36,7 +36,7 @@
 					<xsl:attribute name="type">text/css</xsl:attribute>
 					<xsl:attribute name="href">
 						<xsl:value-of select="$URLROOT" />
-						<xsl:text>/lib/screen.css</xsl:text>
+						<xsl:text>/lib/css/screen.css</xsl:text>
 					</xsl:attribute>
 					<xsl:attribute name="media">screen</xsl:attribute>
 				</xsl:element>
@@ -46,7 +46,7 @@
 					<xsl:attribute name="type">text/css</xsl:attribute>
 					<xsl:attribute name="href">
 						<xsl:value-of select="$URLROOT" />
-						<xsl:text>/lib/print.css</xsl:text>
+						<xsl:text>/lib/css/print.css</xsl:text>
 					</xsl:attribute>
 					<xsl:attribute name="media">print</xsl:attribute>
 				</xsl:element>
@@ -142,7 +142,7 @@
 							<xsl:value-of select="$URLROOT" />
 							<xsl:text>/img/note.png</xsl:text>
 						</xsl:attribute>
-						<xsl:attribute name="alt">Note</xsl:attribute>
+						<xsl:attribute name="alt">Note:</xsl:attribute>
 					</xsl:element>
 				</xsl:element>
 				<xsl:element name="td">
@@ -151,5 +151,11 @@
 			</xsl:element>
 		</xsl:element>
 	</xsl:template>
+
+<!--
+	<xsl:template match="code/text()">
+		<xsl:value-of select="regex:replace(string(.), '^\s+|\s+$', 'g', '')" />
+	</xsl:template>
+-->
 
 </xsl:stylesheet>
