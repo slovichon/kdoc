@@ -26,7 +26,7 @@
 				</subsections>
 			</subsection>
 			<subsection><name>Scheduling</name></subsection>
-			<subsection><name></name></subsection>
+			<subsection><name>Executable Format</name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
 			<subsection><name></name></subsection>
@@ -384,8 +384,8 @@
 				<name>History</name>
 				<subsections>
 					<subsection><name>BSD</name></subsection>
-					<subsection><name>Sockets</name></subsection>
 					<subsection><name>OpenBSD</name></subsection>
+					<subsection><name>Sockets</name></subsection>
 					<subsection><name>PF</name></subsection>
 				</subsections>
 			</subsection>
@@ -402,7 +402,7 @@
 			<subsection><name>Kernel Tracing</name></subsection>
 			<subsection><name>Upgrading</name></subsection>
 			<subsection><name>Troubleshooting</name></subsection>
-			<subsection><name>Performance, Analyzing, Tuning</name></subsection>
+			<subsection><name>Profiling, Performance, Analyzing, Tuning</name></subsection>
 		</subsections>
 	</section>
 	<section>
