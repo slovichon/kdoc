@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <!-- $Id -->
+<?xml-stylesheet type="text/xsl" href="__URLROOT__/lib/xsl/terms.xsl" ?>
 
 <terms
 	xmlns:core="http://projects.closeedge.net/kobsd/xsl/core">
@@ -287,7 +288,7 @@
 			This is an acronym for <core:q>set processor execution level</core:q>.  The process
 			execution level controls which <core:term>interrupt</core:term>s (or rather, which
 			classes of interrupts) to ignore during code segments to avoid problems like
-			<core:term>race conditions</core:term> and make routines <core:term>reentrant</core:term>.
+			<core:term>race condition</core:term>s and make routines <core:term>reentrant</core:term>.
 		</def>
 	</term>
 	<term>
