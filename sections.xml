@@ -43,30 +43,6 @@
 		</subsections>
 	</section>
 	<section>
-		<name>Memory Management</name>
-		<subsections>
-			<subsection><name>Non-executable Stack</name></subsection>
-			<subsection><name>Non-executable Heap</name></subsection>
-			<subsection>
-				<name>UVM</name>
-				<subsections>
-					<subsection><name>Mach VM Differences</name></subsection>
-					<subsection><name>4.4BSD VM Differences</name></subsection>
-					<subsection><name>FreeBSD VM Differences</name></subsection>
-					<subsection><name>NetBSD UVM Differences</name></subsection>
-					<subsection><name>SunOS VM Differences</name></subsection>
-					<subsection><name>Page Loanout</name></subsection>
-					<subsection><name>Map Entry Passing</name></subsection>
-				</subsections>
-			</subsection>
-			<subsection><name>The MMU Interface (pmap)</name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
-		</subsections>
-	</section>
-	<section>
 		<name>Filesystems</name>
 		<subsections>
 			<subsection><name>Overview</name></subsection>
@@ -90,12 +66,20 @@
 					<subsection><name>Minimal Filesystem (nullfs)</name></subsection>
 					<subsection><name>User/Group ID Remapping Filesystem (umapfs)</name></subsection>
 					<subsection><name>Union Filesystem (union)</name></subsection>
+
 					<subsection><name>External Filesystem (xfs)</name></subsection>
 					<!-- xfs - serverless network file service - userspace fs 
 					external file system (actually second incarnation, should be ext2) -->
+					
 					<subsection><name>Portal Filesystem (portal)</name></subsection>
+					
+					<subsection><name>Special File Filesystem (specfs)</name></subsection>
+					<!-- fs for /dev devices -->
+
+					<subsection><name>FIFO Filesystem (fifofs)</name></subsection>
+
 					<subsection><name></name></subsection>
-					<!-- deadfs fifofs genfs specfs -->
+					<!-- deadfs genfs -->
 				</subsections>
 			</subsection>
 			<subsection>
@@ -108,7 +92,7 @@
 					<subsection><name></name></subsection>
 				</subsections>
 			</subsection>
-			<subsection><name>The Virutal Filesystem Interface (vfs)</name></subsection>
+			<subsection><name>The Virtual Filesystem Interface (vfs)</name></subsection>
 			<subsection><name>Quotas</name></subsection>
 			<subsection><name>Swap</name></subsection>
 			<subsection><name></name></subsection>
@@ -153,8 +137,8 @@
 				</subsections>
 			</subsection>
 			<subsection><name>Swapping</name></subsection>
-			<subsection><name></name></subsection>
-			<subsection><name></name></subsection>
+			<subsection><name>Paging</name></subsection>
+			<subsection><name>The MMU Interface (pmap)</name></subsection>
 			<subsection><name></name></subsection>
 		</subsections>
 	</section>
@@ -170,6 +154,7 @@
 					<subsection><name>hp300</name></subsection>
 					<subsection><name>hppa</name></subsection>
 					<subsection><name>i386</name></subsection>
+					<subsection><name>luna88k</name></subsection>
 					<subsection><name>mac68k</name></subsection>
 					<subsection><name>macppc</name></subsection>
 					<subsection><name>mvme68k</name></subsection>
