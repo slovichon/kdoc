@@ -6,7 +6,8 @@
 	xmlns:code="http://projects.closeedge.net/kobsd/xsl/code"
 	extension-element-prefixes="code">
 
-	<xsl:import href="code.xsl" />
+	<xsl:import href="__URLROOT__/lib/xsl/core.xsl" />
+	<xsl:import href="__URLROOT__/lib/outputs/xhtml/code.xsl" />
 	<xsl:output method="xml" />
 	<xsl:strip-space elements="*" />
 
