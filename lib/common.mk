@@ -1,16 +1,24 @@
 # $Id$
 
-.SUFFIXES: .xml .html
+# Output types and their suffixes
+OUTPUTS = xhtml
+XHTML_SUF = .html
+.SUFFIXES: .xml $(XHTML_SUF)
 
-all: $(HTML)
+all: $(OUTPUTS)
+
+$(OUTPUTS):
+	@make ${SRC:S/.xml$/${${.TARGET:U}_SUF}/g}
 
 .xml.html:
-	xsltproc --stringparam URLROOT `pwd`/../.. -o $@ ../../lib/html.xsl $<
+	xsltproc --stringparam URLROOT $(URLROOT) -o $@ $(XHTML_XSL) $<
 
 depend:
-	@for i in $(HTML); do						\
-		echo "$$i: "`pwd`/../../lib/html.xsl >> .depend;	\
-	done
+.for suf in ${OUTPUTS}
+.	for file in ${SRC:R}
+		echo "${file}.${suf}: ${${suf:U}_XSL}" >> .depend
+.	endfor
+.endfor
 
 clean:
-	rm -f $(HTML) .depend
+	rm -f .depend
