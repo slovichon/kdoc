@@ -23,8 +23,8 @@ remain=$(echo $* | perl -pe 's/ /\n/g')
 
 while [ "$remain" ]; do
 	for i in $remain; do
-		echo  "$M4 $MFLAGS $DEP_XSL | $XSLTP $XFLAGS - $i" 1>&2
-		deps=$($M4 $MFLAGS $DEP_XSL | $XSLTP $XFLAGS - $i)
+		echo  "$M4 $M4FLAGS $DEP_XSL | $XSLTP $XFLAGS - $i" 1>&2
+		deps=$($M4 $M4FLAGS $DEP_XSL | $XSLTP $XFLAGS - $i)
 		if [ $? -ne 0 ]; then
 			exit 1
 		fi

@@ -9,4 +9,4 @@ MAKE		= make
 XSLTP		= xsltproc
 XFLAGS		= --stringparam URLROOT ${URLROOT}
 M4		= m4
-MFLAGS		= -D__URLROOT__=${URLROOT}
+M4FLAGS		= -D__URLROOT__=${URLROOT}
