@@ -116,7 +116,7 @@
 					<xsl:attribute name="href">
 						<xsl:value-of select="$URLROOT" />
 						<xsl:text>/doc/intro/terms.html#</xsl:text>
-						<xsl:value-of select="convert($anchor, ' ', '.')" />
+						<xsl:value-of select="translate($anchor, ' ', '.')" />
 					</xsl:attribute>
 					<xsl:element name="em">
 						<xsl:apply-templates />
