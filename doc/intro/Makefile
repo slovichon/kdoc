@@ -2,8 +2,8 @@
 
 SYSROOT = ../..
 
-.include "$(SYSROOT)/lib/defs.mk"
+.include "${SYSROOT}/lib/mk/defs.mk"
 
-SRC = terms.xml conventions.xml
+SRC = terms-index.xml conventions.xml
 
-.include "$(SYSROOT)/lib/common.mk"
+.include "${SYSROOT}/lib/mk/common.mk"
