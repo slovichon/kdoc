@@ -7,7 +7,7 @@
 	xmlns:xi="http://www.w3.org/2001/XInclude"
 	extension-element-prefixes="util">
 
-	<xsl:import href="util.xsl" />
+	<xsl:import href="__URLROOT__/lib/xsl/util.xsl" />
 	<xsl:output method="text" />
 
 	<xsl:template match="processing-instruction('xml-stylesheet')">
@@ -30,18 +30,18 @@
 
 	<xsl:template name="procdep">
 		<xsl:param name="href" />
+
 		<xsl:variable name="prochref">
 			<xsl:call-template name="util:string-replace">
 				<xsl:with-param name="string" select="$href" />
-				<xsl:with-param name="search" select="'__URLROOT__'" />
+				<!-- The constant below must be split up so m4 doesn't expand it. -->
+				<xsl:with-param name="search" select="concat('__URL', 'ROOT__')" />
 				<xsl:with-param name="replacement" select="$URLROOT" />
 			</xsl:call-template>
 		</xsl:variable>
 		<xsl:value-of select="$prochref" />
 		<xsl:text>
 </xsl:text>
-		<!-- Recursively process dependencies. -->
-		<xsl:apply-templates select="document($prochref)" />
 	</xsl:template>
 
 </xsl:stylesheet>
