@@ -11,32 +11,20 @@ ${OUTPUTS}:
 	@make ${SRC:S/.xml$/${${.TARGET:U}_SUF}/g}
 
 .xml.html:
-	@inputfile=${.IMPSRC};										\
-	cmd=;												\
-	for i in $$(xsltproc --stringparam URLROOT ${URLROOT} ${DEP_XSL} ${.IMPSRC}); do		\
-		tube="xsltproc --stringparam URLROOT ${URLROOT} $$i $$inputfile";			\
-		cmd="$$cmd $$tube | ";									\
-		echo "     $$tube | \\";								\
-		inputfile=-;										\
-	done;												\
-	tube="xsltproc --stringparam URLROOT ${URLROOT} -o ${.TARGET} ${XHTML_XSL} $$inputfile";	\
-	cmd="$$cmd $$tube";										\
-	echo "     $$tube";										\
-	echo $$a cmd
+	${M4} ${MFLAGS} ${XHTML_XSL} | ${XSLTP} ${XFLAGS} -o ${.TARGET} - ${.IMPSRC}
 
 depend:
 	@rm -f .depend
 .for _FILE in ${SRC}
 .	for _OUTPUT in ${OUTPUTS:U}
-		@cmd="xsltproc --stringparam URLROOT ${URLROOT} ${DEP_XSL} ${_FILE}";			\
-		echo "$$cmd";										\
-		echo "    ${${_OUTPUT}_XSL}";								\
-		echo -n "${_FILE:R}${${_OUTPUT}_SUF}: ${${_OUTPUT}_XSL}" >> .depend;			\
-		for i in $$($$cmd); do									\
-			echo "    $$i";									\
-			echo " \\" >> .depend;								\
-			echo -n "    $$i" >> .depend;							\
-		done;											\
+		@deps=$$(env M4="${M4}" MFLAGS="${MFLAGS}" DEP_XSL="${DEP_XSL}"	\
+		    XSLTP="${XSLTP}" XFLAGS="${XFLAGS}" 			\
+		    ${SYSROOT}/lib/tools/xsldep ${_FILE} ${${_OUTPUT}_XSL});	\
+		echo -n "${_FILE:R}${${_OUTPUT}_SUF}:" >> .depend;		\
+		for i in $$deps; do						\
+			echo " \\" >> .depend;					\
+			echo -n "    $$i" >> .depend;				\
+		done;								\
 		echo >> .depend
 .	endfor
 .endfor
