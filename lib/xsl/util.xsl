@@ -24,4 +24,25 @@
 		</xsl:choose>
 	</xsl:template>
 
+	<xsl:template name="util:substring-after-last">
+		<xsl:param name="string" />
+		<xsl:param name="substring" />
+
+		<xsl:variable name="remaining">
+			<xsl:value-of select="substring-after($string, $substring)" />
+		</xsl:variable>
+
+		<xsl:choose>
+			<xsl:when test="contains($remaining, $substring)">
+				<xsl:call-template name="util:substring-after-last">
+					<xsl:with-param name="string" select="$remaining" />
+					<xsl:with-param name="substring" select="$substring" />
+				</xsl:call-template>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$remaining" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
 </xsl:stylesheet>
